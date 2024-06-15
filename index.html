@@ -21,34 +21,34 @@
             </label>
             <div id="questions-container">
                 <div class="questions">
-                    <label for="question" class="block mt-4 text-sm font-medium text-gray-700">
+                    <label class="block mt-4 text-sm font-medium text-gray-700">
                         <span class="font-bold">Write Question</span>
-                        <textarea id="question" class="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="4" placeholder="Write Question..."></textarea>
+                        <textarea class="question block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="4" placeholder="Write Question..."></textarea>
                     </label>
-                    <label for="option1" class="block mt-4 text-sm font-medium text-gray-700">
+                    <label class="block mt-4 text-sm font-medium text-gray-700">
                         Option-1
-                        <input type="text" id="option1" class="block w-full h-[2rem] mt-1 border border-gray-300 rounded-md shadow-sm">
+                        <input type="text" class="option1 block w-full h-[2rem] mt-1 border border-gray-300 rounded-md shadow-sm">
                     </label>
-                    <label for="option2" class="block mt-4 text-sm font-medium text-gray-700">
+                    <label class="block mt-4 text-sm font-medium text-gray-700">
                         Option-2
-                        <input type="text" id="option2" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                        <input type="text" class="option2 block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                     </label>
-                    <label for="option3" class="block mt-4 text-sm font-medium text-gray-700">
+                    <label class="block mt-4 text-sm font-medium text-gray-700">
                         Option-3
-                        <input type="text" id="option3" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                        <input type="text" class="option3 block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                     </label>
-                    <label for="option4" class="block mt-4 text-sm font-medium text-gray-700">
+                    <label class="block mt-4 text-sm font-medium text-gray-700">
                         Option-4
-                        <input type="text" id="option4" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                        <input type="text" class="option4 block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                     </label>
-                    <label for="answer" class="block mt-4 text-sm font-medium text-gray-700">
+                    <label class="block mt-4 text-sm font-medium text-gray-700">
                         Answer
-                        <input type="text" id="answer" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                        <input type="text" class="answer block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                     </label>
                 </div>
             </div>
-            <button id="add-question-btn" class="mt-4 border border-blue-600 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add Question</button>
-            <button id="save-btn" type="button" class="mt-4 border border-blue-600 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Save Questions</button>
+            <button type="button" id="add-question-btn" class="mt-4 border border-blue-600 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add Question</button>
+            <button type="button" id="save-btn" class="mt-4 border border-blue-600 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Save Questions</button>
         </form>
     </div>
     <script>
@@ -56,84 +56,81 @@
             const newQuestionDiv = document.createElement('div');
             newQuestionDiv.className = 'questions mt-4';
             newQuestionDiv.innerHTML = `
-                <label for="question" class="block text-sm font-medium text-gray-700">
+                <label class="block text-sm font-medium text-gray-700">
                     <span class="font-bold">Write Question</span>
-                    <textarea class="block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="4" placeholder="Write Question..."></textarea>
+                    <textarea class="question block w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="4" placeholder="Write Question..."></textarea>
                 </label>
-                <label for="option1" class="block mt-4 text-sm font-medium text-gray-700">
+                <label class="block mt-4 text-sm font-medium text-gray-700">
                     Option-1
-                    <input type="text" class="block w-full h-[2rem] mt-1 border border-gray-300 rounded-md shadow-sm">
+                    <input type="text" class="option1 block w-full h-[2rem] mt-1 border border-gray-300 rounded-md shadow-sm">
                 </label>
-                <label for="option2" class="block mt-4 text-sm font-medium text-gray-700">
+                <label class="block mt-4 text-sm font-medium text-gray-700">
                     Option-2
-                    <input type="text" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                    <input type="text" class="option2 block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                 </label>
-                <label for="option3" class="block mt-4 text-sm font-medium text-gray-700">
+                <label class="block mt-4 text-sm font-medium text-gray-700">
                     Option-3
-                    <input type="text" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                    <input type="text" class="option3 block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                 </label>
-                <label for="option4" class="block mt-4 text-sm font-medium text-gray-700">
+                <label class="block mt-4 text-sm font-medium text-gray-700">
                     Option-4
-                    <input type="text" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                    <input type="text" class="option4 block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                 </label>
-                <label for="answer" class="block mt-4 text-sm font-medium text-gray-700">
+                <label class="block mt-4 text-sm font-medium text-gray-700">
                     Answer
-                    <input type="text" class="block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
+                    <input type="text" class="answer block w-full mt-1 h-[2rem] border border-gray-300 rounded-md shadow-sm">
                 </label>
             `;
             document.getElementById('questions-container').appendChild(newQuestionDiv);
         });
 
-document.getElementById('save-btn').addEventListener('click', async function() {
-    const questionsDivs = document.querySelectorAll('#questions-container');
-    const questions = [];
+        document.getElementById('save-btn').addEventListener('click', async function() {
+            const questionsDivs = document.querySelectorAll('.questions');
+            const questions = [];
+            const level = document.getElementById('level').value;
 
-    questionsDivs.forEach(div => {
-        const level = document.getElementById('level').value;
-        const questionText = div.querySelector('#question').value;
-        const option1 = div.querySelector('#option1').value;
-        const option2 = div.querySelector('#option2').value;
-        const option3 = div.querySelector('#option3').value;
-        const option4 = div.querySelector('#option4').value;
-        const answer = div.querySelector('#answer').value;
+            questionsDivs.forEach(div => {
+                const questionText = div.querySelector('.question').value;
+                const option1 = div.querySelector('.option1').value;
+                const option2 = div.querySelector('.option2').value;
+                const option3 = div.querySelector('.option3').value;
+                const option4 = div.querySelector('.option4').value;
+                const answer = div.querySelector('.answer').value;
 
-        const question = {
-            level: level,
-            question: questionText,
-            options: [option1, option2, option3, option4],
-            answer: answer
-        };
+                const question = {
+                    level: level,
+                    
+                    text: questionText,
+                    options: [option1, option2, option3, option4],
+                    answer: answer
+                };
 
-        questions.push(question);
-    });
+                questions.push(question);
+            });
 
-    console.log('Questions array before sending:', questions); 
+            try {
+                const response = await fetch('http://localhost:4000/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(questions)
+                });
 
-    try {
-        const response = await fetch('http://localhost:4000/save', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(questions)
+                if (!response.ok) {
+                    throw new Error('Error');
+                }
+
+                const data = await response.json();
+                console.log('Response:', data);
+                console.log("Questions",questions)
+                alert('Questions saved successfully!');
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error saving questions');
+            }
         });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok.');
-        }
-
-        const data = await response.json();
-        console.log('Response from backend:', data);
-        alert('Questions saved successfully!');
-    } catch (error) {
-        console.error('Error saving questions:', error);
-        alert('Error saving questions!');
-    }
-});
-
-
     </script>
 </body>
 </html>
-
 
