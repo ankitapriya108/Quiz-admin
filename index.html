@@ -17,6 +17,7 @@
                     <option>Easy</option>
                     <option>Medium</option>
                     <option>Hard</option>
+                    <option>Very hard</option>
                 </select>
             </label>
             <div id="questions-container">
@@ -87,22 +88,28 @@
         document.getElementById('save-btn').addEventListener('click', async function() {
             const questionsDivs = document.querySelectorAll('.questions');
             const questions = [];
+            const questionArray = [];
             const level = document.getElementById('level').value;
 
             questionsDivs.forEach(div => {
-                const questionText = div.querySelector('.question').value;
+                const text = div.querySelector('.question').value;
                 const option1 = div.querySelector('.option1').value;
                 const option2 = div.querySelector('.option2').value;
                 const option3 = div.querySelector('.option3').value;
                 const option4 = div.querySelector('.option4').value;
                 const answer = div.querySelector('.answer').value;
-
-                const question = {
-                    level: level,
-                    
-                    text: questionText,
+                
+                const singleQuestion ={
+                    text: text,
                     options: [option1, option2, option3, option4],
                     answer: answer
+                }
+
+                questionArray.push(singleQuestion);
+                const question = {
+                    level: level,
+                    questionArray: questionArray
+                   
                 };
 
                 questions.push(question);
