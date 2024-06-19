@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+   
+    <link href="output.css" rel="stylesheet">
+</head>
+
+
+<body class="bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md mx-auto bg-white shadow-md rounded-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">Login</h2>
+        <form id="loginForm">
+            <div class="mb-4">
+                <label for="loginEmail" class="block text-gray-700">email</label>
+                <input type="text" id="loginEmail" class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="loginPassword" class="block text-gray-700">Password</label>
+                <input type="password" id="loginPassword" class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+            </div>
+            <button type="submit" id="submitSignIn" class="bg-green-500 text-white px-4 py-2 rounded-md">Login</button>
+            <p id="loginMessage" class="mt-4 text-red-500"></p>
+        </form>
+    </div>
+</body>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getFirestore,
+  setDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA3eCCHm1wMKJALT7rPvxQHXSiVBVVCzf8",
+    authDomain: "quiz-auth-5e13c.firebaseapp.com",
+    projectId: "quiz-auth-5e13c",
+    storageBucket: "quiz-auth-5e13c.appspot.com",
+    messagingSenderId: "539629378672",
+    appId: "1:539629378672:web:f458398405f3f151f5a8b5",
+    measurementId: "G-1Z7F4FQRRK"
+  };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+const signIn = document.getElementById("submitSignIn");
+signIn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const email = document.getElementById("loginEmail").value
+    const password = document.getElementById("loginPassword").value
+    let message = document.getElementById("loginMessage").value
+    const auth = getAuth()
+    signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        message = "login is sucessful, signMessage"
+        const user = userCredential.user;
+        localStorage.setItem("loggedInUserId", user.uid);
+        window.location.href = "form.html"
+    }).catch((error) => {
+        if (errorCode === "auth/invalid-credential") {
+            message.textContent = "incorrect email or password", "signInMessage";
+        } else {
+            message.textContent = "Account does not exist";
+        }
+
+    })
+
+})
+</script>
+</html>
